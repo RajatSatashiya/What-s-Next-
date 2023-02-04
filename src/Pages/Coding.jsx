@@ -10,10 +10,10 @@ function Coding() {
     try {
       const response = await fetch("/allevents");
       const data = await response.json();
-      setEvents(data);
       data.sort(function (a, b) {
-        return new Date(a.date) - new Date(b.date);
+        return new Date(a.time) - new Date(b.time);
       });
+      setEvents(data);
     } catch (e) {
       console.log(e);
     }

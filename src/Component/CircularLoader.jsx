@@ -26,7 +26,7 @@ const CircularLoader = () => {
               cx="50"
               cy="50"
               r="45"
-              stroke="#01AF96"
+              stroke="#07FEDA"
               strokeWidth="10"
               strokeDasharray={circumference}
               strokeDashoffset={offset}
