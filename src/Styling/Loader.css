@@ -1,7 +1,11 @@
-.loader {
-  margin: auto;
-  margin-top: 3rem;
-  width: 10rem;
+.loaderContainer {
   font-family: Montserrat;
-  aspect-ratio: 1;
+  aspect-ratio: 1.1;
+  background: black;
+}
+
+.loader {
+  width: 50%;
+  margin: auto;
+  padding-top: 3rem;
 }

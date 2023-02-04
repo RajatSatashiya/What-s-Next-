@@ -2,10 +2,31 @@
   font-family: Montserrat;
   font-size: 1.4rem;
   font-weight: 700;
-  margin: 1rem;
+  /* margin: 1rem; */
 }
 
 .cardHolder {
   display: flex;
   flex-wrap: wrap;
+  position: relative;
+  top: -7rem;
+  margin-top: 2rem;
+  background: #b5a5c2;
+  background: #fff;
+  width: 95%;
+  box-shadow: 0 0 20px #2a2f32;
+  margin: auto;
+  /* border-radius-t: 30px; */
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding-top: 1rem;
+  padding-bottom: 4rem;
+}
+
+.cardHolder h3 {
+  margin: 1rem;
+  margin-left: 1.5rem;
+  font-family: Montserrat;
+  font-size: 1.3rem;
+  font-weight: 700;
 }
