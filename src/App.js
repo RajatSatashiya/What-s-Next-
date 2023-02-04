@@ -6,6 +6,7 @@ import Hackathon from "./Pages/Hackathon";
 import Register from "./Pages/Register";
 import Login from "./Pages/Login";
 import SingleEvent from "./Pages/SingleEvent";
+import Profile from "./Pages/Profile";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/hackathon" element={<Hackathon />} />
         <Route path="/register" element={<Register />} />
         <Route path="/singleevent/:id" element={<SingleEvent />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </div>
   );

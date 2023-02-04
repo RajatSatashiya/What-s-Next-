@@ -1,0 +1,65 @@
+.profilecontainer {
+  /* margin: 1rem; */
+  padding: 1rem;
+  display: flex;
+  background: #1d1d27;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.profilepic {
+  width: 40%;
+}
+
+.profileTitle {
+  color: #fff;
+  font-weight: 700;
+}
+
+.profiletext {
+  color: #2cb1a5;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.profilecontainer div {
+  font-family: Montserrat;
+  font-size: 1.2rem;
+}
+
+.updateProfile {
+  padding: 1rem;
+  font-family: Montserrat;
+}
+
+.updateProfile h3 {
+  font-size: 1.5rem;
+}
+
+.goals {
+  background: rgb(228, 227, 227);
+  background: #ffbd4a;
+}
+
+.goals {
+  width: 95%;
+  margin: auto;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+  align-items: center;
+}
+.goals img {
+  width: 7rem;
+  color: white;
+}
+
+.goalsDone {
+  font-family: Montserrat;
+  font-weight: 500;
+}
+
+.total {
+  margin-top: 0.6rem;
+}
