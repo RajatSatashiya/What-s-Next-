@@ -7,11 +7,8 @@ function Register() {
   const usernameRef = useRef();
   const passwordRef = useRef();
   const emailRef = useRef();
-  const ageRef = useRef();
   const history = useNavigate();
   const authContext = useContext(AuthContext);
-
-  console.log(authContext.isLoggedIn);
 
   useEffect(() => {
     if (authContext.isLoggedIn) {
@@ -27,7 +24,6 @@ function Register() {
       name: usernameRef.current.value,
       password: passwordRef.current.value,
       email: emailRef.current.value,
-      age: ageRef.current.value,
     };
     submitForm(formData);
   };
@@ -40,19 +36,20 @@ function Register() {
           name: formData.name,
           password: formData.password,
           email: formData.email,
-          age: formData.age,
         }),
         headers: {
           "Content-Type": "application/json; charset=UTF-8",
         },
       });
       const data = await response.json();
-      authContext.login(data.message.token);
+      authContext.login(data.token);
 
-      if (response.status == 201) {
+      const tokenValue = localStorage.getItem("token");
+      if (tokenValue === "undefined") {
+        history("/signup");
+      } else {
         history("/");
       }
-      console.log(response.status);
     } catch (e) {
       console.log(e);
     }

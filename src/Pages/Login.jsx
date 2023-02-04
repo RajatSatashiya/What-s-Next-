@@ -34,7 +34,14 @@ function Login() {
         },
       });
       const data = await response.json();
-      authContext.login(data.message.token);
+      authContext.login(data.token);
+
+      const tokenValue = localStorage.getItem("token");
+      if (tokenValue === "undefined") {
+        history("/login");
+      } else {
+        history("/");
+      }
     } catch (e) {
       console.log(e);
     }

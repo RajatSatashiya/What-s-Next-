@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import "../Styling/Coding.css";
 import Card from "../Component/Card";
 import CircularLoader from "../Component/CircularLoader";
 
 function Coding() {
   const [events, setEvents] = useState([]);
+
   const getAllEvents = async () => {
     try {
       const response = await fetch("/allevents");

@@ -43,6 +43,17 @@
   color: black;
 }
 
+.btn {
+  color: white;
+  background: black;
+  width: max-content;
+  font-family: Montserrat;
+  padding: 0.7rem;
+  font-size: 0.7rem;
+  border-radius: 7px;
+  margin-top: 1rem;
+}
+
 @media screen and (min-width: 600px) {
   .card {
     width: 25rem;
