@@ -9,7 +9,7 @@ import Login from "./Pages/Login";
 function App() {
   return (
     <div className="app">
-      <Navbar />
+      {/* <Navbar /> */}
       <Routes>
         <Route path="/" exact element={<Coding />} />
         <Route path="/login" element={<Login />} />

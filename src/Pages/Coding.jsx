@@ -1,11 +1,12 @@
 import React from "react";
 import "../Styling/Coding.css";
 import Card from "../Component/Card";
+import CircularLoader from "../Component/CircularLoader";
 
 function Coding() {
   return (
     <div>
-      <h3 className="upcoming">Upcoming Contests</h3>
+      <CircularLoader />
       <div className="cardHolder">
         <Card
           contest="Codeforces Round #850 (Div. 1, based on VK Cup 2022 - Final Round)"
