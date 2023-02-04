@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import "../Styling/Card.css";
 
 export default function Card({ contest, start, image, site, id }) {
-  const authContext = useContext(AuthContext);
 
   const [thedate, setThedate] = useState("");
   const Thedate = () => {
@@ -15,23 +14,7 @@ export default function Card({ contest, start, image, site, id }) {
     setThedate(formattedDate);
   };
 
-  const addToGoal = async () => {
-    try {
-      const events = [{ id: id, completed: false }];
-      const response = await fetch("/users/me", {
-        method: "PATCH",
-        body: JSON.stringify({ events }),
-        headers: {
-          "Content-Type": "application/json; charset=UTF-8",
-          Authorization: `Bearer ${authContext.token}`,
-        },
-      });
-      const data = await response.json();
-      console.log(data);
-    } catch (e) {
-      console.log(e);
-    }
-  };
+  
 
   useEffect(() => {
     Thedate();
@@ -52,9 +35,7 @@ export default function Card({ contest, start, image, site, id }) {
           Visit Site
         </a>
 
-        <div className="btn" onClick={() => addToGoal()}>
-          Add to Goals
-        </div>
+        
       </div>
     </div>
   );

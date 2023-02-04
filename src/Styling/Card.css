@@ -44,9 +44,11 @@
 }
 
 .btn {
-  color: white;
-  background: black;
+  color: black;
+  background: white;
   width: max-content;
+  position: relative;
+  right: -70vw;
   font-family: Montserrat;
   padding: 0.7rem;
   font-size: 0.7rem;

@@ -1,9 +1,13 @@
 import "../Styling/SingleEvent.css";
-import { useEffect, useState } from "react";
+import AuthContext from "../context/authContext";
+import { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import Post from "../Component/Post";
+
 function SingleEvent() {
   const { id } = useParams();
+  const authContext = useContext(AuthContext);
+
   const [eventdata, setEventdata] = useState({
     code: "",
     name: "",
@@ -50,6 +54,24 @@ function SingleEvent() {
     }
   };
 
+  const addToGoal = async () => {
+    try {
+      const events = [{ id: id, completed: false }];
+      const response = await fetch("/users/me", {
+        method: "PATCH",
+        body: JSON.stringify({ events }),
+        headers: {
+          "Content-Type": "application/json; charset=UTF-8",
+          Authorization: `Bearer ${authContext.token}`,
+        },
+      });
+      const data = await response.json();
+      console.log(data);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   useEffect(() => {
     getEvent();
   }, []);
@@ -81,6 +103,7 @@ function SingleEvent() {
         <h2>
           <span>What:</span> {eventdata.name}
         </h2>
+
         <h2>
           <span>When:</span>
           {eventdata.time && eventdata.time.toLocaleDateString()}{" "}
@@ -89,15 +112,19 @@ function SingleEvent() {
         <h2>
           <span>Starts In:</span> {eventdata.time && timeRemaining()} hours
         </h2>
+        <div className="btn" onClick={() => addToGoal()}>
+          Add to Goals
+        </div>
       </div>
       <div className="eventThread">
         <div className="post">
           <h2>{eventdata.name}</h2>
         </div>
 
-        {posts.map((post) => (
+        {posts.map((post, index) => (
           <Post
             key={post.user}
+            index={index}
             msg={post.msg}
             user={post.user}
             comments={post.comments}

@@ -62,17 +62,19 @@ function Profile() {
         },
       });
       const data = await response.json();
-      console.log(data.events.length);
+      console.log(data);
       setUsername(data.name);
       setEmail(data.email);
 
-      setCodingHandle((prev) => ({
-        ...prev,
-        codechef: data.handles[0].val,
-        codeforces: data.handles[1].val,
-        leetcode: data.handles[2].val,
-        linkedin: data.handles[3].val,
-      }));
+      if (data.handles.length) {
+        setCodingHandle((prev) => ({
+          ...prev,
+          codechef: data.handles[0].val,
+          codeforces: data.handles[1].val,
+          leetcode: data.handles[2].val,
+          linkedin: data.handles[3].val,
+        }));
+      }
     } catch (e) {
       console.log(e);
     }
