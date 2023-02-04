@@ -1,6 +1,9 @@
 import "../Styling/SingleEvent.css";
+import { useParams } from "react-router-dom";
 
 function SingleEvent() {
+  const { id } = useParams();
+
   var currentDate = new Date();
   currentDate.setDate(currentDate.getDate() + 5);
   currentDate.setHours(14, 30, 0, 0);

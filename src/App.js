@@ -16,7 +16,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/hackathon" element={<Hackathon />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/singleevent" element={<SingleEvent />} />
+        <Route path="/singleevent/:id" element={<SingleEvent />} />
       </Routes>
     </div>
   );

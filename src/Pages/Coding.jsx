@@ -13,14 +13,33 @@ function Coding() {
       data.sort(function (a, b) {
         return new Date(a.date) - new Date(b.date);
       });
-      console.log(data);
     } catch (e) {
       console.log(e);
     }
   };
 
   const displayEvents = events.map((item, index) => {
-    return <Card contest={item.name} key={index} start={item.time} />;
+    const arr = ["COOK", "CodeChef", "Starters"];
+    var site = "";
+
+    console.log(item);
+    for (var i = 0; i < arr.length; i++) {
+      if (item.name.includes(arr[i])) {
+        site = "https://www.codechef.com/contests";
+        break;
+      } else {
+        site = "https://codeforces.com/contests";
+      }
+    }
+    return (
+      <Card
+        contest={item.name}
+        key={index}
+        start={item.time}
+        site={site}
+        id={item._id}
+      />
+    );
   });
 
   useEffect(() => {
@@ -31,23 +50,6 @@ function Coding() {
       <CircularLoader />
       <div className="cardHolder">
         <h3>Upcoming Events...</h3>
-        {/* <Card
-          contest="Codeforces Round #850 (Div. 1, based on VK Cup 2022 - Final Round)"
-          image="./images/codeforces.png"
-          site="https://codeforces.com/contests"
-        />
-        <Card
-          contest="Codeforces Round #850 (Div. 1, based on VK Cup 2022 - Final Round)"
-          image="./images/codeforces.png"
-          site="https://codeforces.com/contests"
-        />
-
-        <Card
-          contest="Codeforces Round #850 (Div. 2, based on VK Cup 2022 - Final Round)"
-          site="https://www.codechef.com/contests"
-        />
-        <Card contest="Codeforces Round (Div. 2)" />
-        <Card contest="SWERC 2022-2023 - Online Mirror (Unrated, ICPC Rules, Teams Preferred)" /> */}
         {displayEvents}
       </div>
     </div>

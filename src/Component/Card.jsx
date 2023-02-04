@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "../Styling/Card.css";
 
-export default function Card({ contest, start, image, site }) {
+export default function Card({ contest, start, image, site, id }) {
   const [thedate, setThedate] = useState("");
   const Thedate = () => {
     const date = new Date(start);
@@ -16,13 +17,14 @@ export default function Card({ contest, start, image, site }) {
   }, []);
   return (
     <div className="card">
-      <div>{contest}</div>
+      <div>
+        <Link to={`/singleevent/${id}`}>{contest}</Link>
+      </div>
       <div className="startDate">
         Starts on:
         <div>{thedate}</div>
       </div>
       <div>
-        {/* <img src={image} className="images" alt="comptetion logo"></img> */}
         <a href={site} className="site">
           Visit Site
         </a>
