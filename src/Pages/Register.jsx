@@ -43,10 +43,11 @@ function Register() {
       });
       const data = await response.json();
       authContext.login(data.token);
+      console.log(data);
 
       const tokenValue = localStorage.getItem("token");
       if (tokenValue === "undefined") {
-        history("/signup");
+        history("/register");
       } else {
         history("/");
       }

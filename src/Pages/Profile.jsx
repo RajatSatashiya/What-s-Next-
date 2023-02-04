@@ -8,8 +8,10 @@ function Profile() {
   const codeforcesHandle = useRef();
   const leetcodeHandle = useRef();
   const linkedinHandle = useRef();
+  const [eventName, setEventname] = useState("");
   const authContext = useContext(AuthContext);
 
+  const [events, setEvents] = useState([]);
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [codingHandle, setCodingHandle] = useState({
@@ -62,9 +64,10 @@ function Profile() {
         },
       });
       const data = await response.json();
-      console.log(data);
+      // console.log(data);
       setUsername(data.name);
       setEmail(data.email);
+      setEvents(data.events);
 
       if (data.handles.length) {
         setCodingHandle((prev) => ({
@@ -80,9 +83,39 @@ function Profile() {
     }
   };
 
+  const getEvents = async (events) => {
+    const arr = [];
+    events.map((event) => {
+      arr.push(event.id);
+    });
+    try {
+      const response = await fetch("/someevents", {
+        method: "POST",
+        body: JSON.stringify({
+          ids: arr,
+        }),
+        headers: {
+          "Content-Type": "application/json; charset=UTF-8",
+        },
+      });
+      const data = await response.json();
+      console.log(data);
+      setEventname(data[0].name);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   useEffect(() => {
     getUserData();
   }, []);
+
+  useEffect(() => {
+    if (events.length != 0) {
+      getEvents(events);
+    }
+  }, [events]);
+
   return (
     <>
       <div className="profilecontainer">
@@ -173,6 +206,11 @@ function Profile() {
           <div className="profileTitle total">Total Completed</div>
           <div className="">{"45/57"}</div>
         </div>
+      </div>
+
+      <div className="updateProfile events">
+        <h3>Events</h3>
+        <div>{eventName}</div>
       </div>
     </>
   );

@@ -35,6 +35,7 @@ function Login() {
       });
       const data = await response.json();
       authContext.login(data.token);
+      console.log("asd");
 
       const tokenValue = localStorage.getItem("token");
       if (tokenValue === "undefined") {
