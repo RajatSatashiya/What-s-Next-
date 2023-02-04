@@ -5,6 +5,7 @@ import Coding from "./Pages/Coding";
 import Hackathon from "./Pages/Hackathon";
 import Register from "./Pages/Register";
 import Login from "./Pages/Login";
+import SingleEvent from "./Pages/SingleEvent";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/hackathon" element={<Hackathon />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/singleevent" element={<SingleEvent />} />
       </Routes>
     </div>
   );
