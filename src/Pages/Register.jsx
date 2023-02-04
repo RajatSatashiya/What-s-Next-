@@ -60,6 +60,7 @@ function Register() {
 
   return (
     <div className="profile">
+      <h1>What's Next ??</h1>
       <form onSubmit={handleSubmit}>
         <div>
           <div className="label">Username</div>
@@ -76,10 +77,10 @@ function Register() {
           <input type="password" ref={passwordRef} />
         </div>
 
-        <div>
+        {/* <div>
           <div className="label">Age</div>
           <input type="number" ref={ageRef} />
-        </div>
+        </div> */}
 
         <div>
           <input type="submit" />

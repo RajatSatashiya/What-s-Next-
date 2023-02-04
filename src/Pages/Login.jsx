@@ -42,6 +42,7 @@ function Login() {
 
   return (
     <div className="profile">
+      <h1>What's Next ??</h1>
       <form onSubmit={handleSubmit}>
         <div>
           <div className="label">Email</div>
