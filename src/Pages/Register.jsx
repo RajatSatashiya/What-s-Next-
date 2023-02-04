@@ -1,9 +1,9 @@
 import React, { useRef, useEffect, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import AuthContext from "../context/authContext";
-import "../Styling/Profile.css";
+import "../Styling/Register.css";
 
-function Profile() {
+function Register() {
   const usernameRef = useRef();
   const passwordRef = useRef();
   const emailRef = useRef();
@@ -89,4 +89,4 @@ function Profile() {
   );
 }
 
-export default Profile;
+export default Register;

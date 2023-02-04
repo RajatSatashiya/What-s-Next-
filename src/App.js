@@ -1,10 +1,10 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./Component/Navbar";
-import Coding from "./Component/Coding";
-import Hackathon from "./Component/Hackathon";
-import Profile from "./Component/Profile";
-import Login from "./Component/Login";
+import Coding from "./Pages/Coding";
+import Hackathon from "./Pages/Hackathon";
+import Profile from "./Pages/Register";
+import Login from "./Pages/Login";
 
 function App() {
   return (

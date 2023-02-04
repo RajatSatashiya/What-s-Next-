@@ -1,6 +1,6 @@
 import React from "react";
 import "../Styling/Coding.css";
-import Card from "./Card";
+import Card from "../Component/Card";
 
 function Coding() {
   return (
