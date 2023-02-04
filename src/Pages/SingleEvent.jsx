@@ -1,7 +1,7 @@
 import "../Styling/SingleEvent.css";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-
+import Post from "../Component/Post";
 function SingleEvent() {
   const { id } = useParams();
   const [eventdata, setEventdata] = useState({
@@ -54,6 +54,27 @@ function SingleEvent() {
     getEvent();
   }, []);
 
+  const posts = [
+    {
+      msg: "This event is amazing",
+      user: "source404",
+      comments: [
+        { text: "yes i loved it last year", user: "Boom360" },
+        { text: "The organisers were really friendly", user: "NotBoom" },
+      ],
+    },
+    {
+      msg: "What do i need for this Event",
+      user: "Rajat",
+      comments: [],
+    },
+    {
+      msg: "Will travel Expenses be Covered",
+      user: "mansiii13",
+      comments: [],
+    },
+  ];
+
   return (
     <>
       <div className="eventInfo">
@@ -73,6 +94,15 @@ function SingleEvent() {
         <div className="post">
           <h2>{eventdata.name}</h2>
         </div>
+
+        {posts.map((post) => (
+          <Post
+            key={post.user}
+            msg={post.msg}
+            user={post.user}
+            comments={post.comments}
+          ></Post>
+        ))}
       </div>
     </>
   );

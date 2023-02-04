@@ -1,0 +1,20 @@
+.post {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  padding: 2rem;
+}
+
+.post p {
+  margin-bottom: 0.5rem;
+}
+.post h6 {
+  margin-bottom: 0.25rem;
+  text-align: right;
+  font-weight: 400;
+}
+
+.comment h5 {
+  font-weight: 450;
+  font-size: smaller;
+}
