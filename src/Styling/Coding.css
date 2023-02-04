@@ -1,0 +1,11 @@
+.upcoming {
+  font-family: Montserrat;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 1rem;
+}
+
+.cardHolder {
+  display: flex;
+  flex-wrap: wrap;
+}

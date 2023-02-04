@@ -1,0 +1,35 @@
+.card {
+  background: #1d1d27;
+  color: #95a7d8;
+  width: 90%;
+  margin: 1rem;
+  margin-left: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-family: "Times New Roman", Times, serif;
+  font-family: Montserrat;
+  font-weight: 600;
+}
+
+.startDate {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #ea4335;
+}
+
+.images {
+  width: 30px;
+}
+
+.site {
+  text-decoration: underline;
+  text-align: right;
+  color: #95a7d8;
+}
+
+@media screen and (min-width: 600px) {
+  .card {
+    width: 25rem;
+  }
+}
