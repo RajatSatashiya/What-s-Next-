@@ -22,7 +22,6 @@ function Coding() {
     const arr = ["COOK", "CodeChef", "Starters"];
     var site = "";
 
-    console.log(item);
     for (var i = 0; i < arr.length; i++) {
       if (item.name.includes(arr[i])) {
         site = "https://www.codechef.com/contests";

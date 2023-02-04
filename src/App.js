@@ -8,6 +8,7 @@ import Login from "./Pages/Login";
 import SingleEvent from "./Pages/SingleEvent";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Profile from "./Pages/Profile";
 
 function App() {
   const [MenuIsOpen, setMenuIsOpen] = useState(false);
@@ -59,6 +60,7 @@ function App() {
           <Route path="/hackathon" element={<Hackathon />} />
           <Route path="/register" element={<Register />} />
           <Route path="/singleevent/:id" element={<SingleEvent />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
       </div>
     </>

@@ -18,7 +18,7 @@ export default function Card({ contest, start, image, site, id }) {
   return (
     <div className="card">
       <div>
-        <Link to={`/singleevent/${id}`}>{contest}</Link>
+        <Link to={`/singleevent/${id}`} className="contestLink">{contest}</Link>
       </div>
       <div className="startDate">
         Starts on:
