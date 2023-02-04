@@ -118,7 +118,7 @@ function SingleEvent() {
       </div>
       <div className="eventThread">
         <div className="post">
-          <h2>{eventdata.name}</h2>
+          <h2>Discussions</h2>
         </div>
 
         {posts.map((post, index) => (

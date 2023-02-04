@@ -5,8 +5,10 @@
 }
 
 .eventInfo h2 {
-  margin-bottom: 1rem;
+  margin-top: 1rem;
   color: #2cb1a5;
+  color: white;
+  text-align: center;
 }
 
 .eventThread {
@@ -20,7 +22,7 @@
 }
 
 .eventInfo span {
-  color: white;
+  color: #2cb1a5;
 }
 
 .post {
