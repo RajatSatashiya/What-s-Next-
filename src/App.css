@@ -9,3 +9,36 @@
 a {
   text-decoration: none;
 }
+
+.ham {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  color: white;
+}
+
+.menu {
+  text-align: center;
+  padding-top: 2rem;
+  font-size: 2rem;
+  background-color: rgba(54, 59, 61, 0.3);
+  /* background-color: rgba(44, 177, 165, 0.3); */
+  backdrop-blur: 13px;
+  backdrop-filter: blur(13px);
+  color: white;
+  width: 60vw;
+  height: 100vh;
+}
+
+.menu ul {
+  list-style: none;
+}
+
+.listItem {
+  color: white;
+}
+
+.listItem:visited {
+  color: white;
+}
