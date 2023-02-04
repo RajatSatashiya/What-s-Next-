@@ -1,0 +1,17 @@
+.eventInfo {
+  background-color: lightblue;
+  padding: 1rem;
+  color: rgb(129, 111, 7);
+}
+
+.eventInfo h2 {
+  margin-bottom: 1rem;
+}
+
+.eventThread {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
