@@ -1,4 +1,6 @@
 import React, { useRef, useContext, useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+
 import AuthContext from "../context/authContext";
 
 import "../Styling/Profile.css";
@@ -11,6 +13,7 @@ function Profile() {
   const [eventName, setEventname] = useState("");
   const authContext = useContext(AuthContext);
 
+  const history = useNavigate();
   const [events, setEvents] = useState([]);
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -107,6 +110,9 @@ function Profile() {
   };
 
   useEffect(() => {
+    if (!authContext.isLoggedIn) {
+      history("/login");
+    }
     getUserData();
   }, []);
 

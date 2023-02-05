@@ -1,10 +1,14 @@
 import React, { useEffect, useState, useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import AuthContext from "../context/authContext";
 import "../Styling/Coding.css";
 import Card from "../Component/Card";
 import CircularLoader from "../Component/CircularLoader";
 
 function Coding() {
   const [events, setEvents] = useState([]);
+  const authContext = useContext(AuthContext);
+  const history = useNavigate();
 
   const getAllEvents = async () => {
     try {
@@ -20,17 +24,18 @@ function Coding() {
   };
 
   const displayEvents = events.map((item, index) => {
-    const arr = ["COOK", "CodeChef", "Starters"];
     var site = "";
 
-    for (var i = 0; i < arr.length; i++) {
-      if (item.name.includes(arr[i])) {
+    if ("location" in item) {
+      site = "https://mlh.io/seasons/2023/events";
+    } else {
+      if ("code" in item) {
         site = "https://www.codechef.com/contests";
-        break;
       } else {
         site = "https://codeforces.com/contests";
       }
     }
+
     return (
       <Card
         contest={item.name}
@@ -43,6 +48,9 @@ function Coding() {
   });
 
   useEffect(() => {
+    if (!authContext.isLoggedIn) {
+      history("/login");
+    }
     getAllEvents();
   }, []);
   return (

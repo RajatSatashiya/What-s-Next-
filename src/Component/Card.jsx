@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import "../Styling/Card.css";
 
 export default function Card({ contest, start, image, site, id }) {
-
   const [thedate, setThedate] = useState("");
   const Thedate = () => {
     const date = new Date(start);
@@ -13,8 +12,6 @@ export default function Card({ contest, start, image, site, id }) {
 
     setThedate(formattedDate);
   };
-
-  
 
   useEffect(() => {
     Thedate();
@@ -31,11 +28,9 @@ export default function Card({ contest, start, image, site, id }) {
         <div>{thedate}</div>
       </div>
       <div>
-        <a href={site} className="site">
+        <a href={site} className="site" target="_blank">
           Visit Site
         </a>
-
-        
       </div>
     </div>
   );

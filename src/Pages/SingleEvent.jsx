@@ -7,6 +7,7 @@ import Post from "../Component/Post";
 function SingleEvent() {
   const { id } = useParams();
   const authContext = useContext(AuthContext);
+  const [added, setAdded] = useState(true);
 
   const [eventdata, setEventdata] = useState({
     code: "",
@@ -66,7 +67,7 @@ function SingleEvent() {
         },
       });
       const data = await response.json();
-      console.log(data);
+      setAdded(true);
     } catch (e) {
       console.log(e);
     }
@@ -113,7 +114,7 @@ function SingleEvent() {
           <span>Starts In:</span> {eventdata.time && timeRemaining()} hours
         </h2>
         <div className="btn" onClick={() => addToGoal()}>
-          Add to Goals
+          {added ? "Add to Goals" : "Added"}
         </div>
       </div>
       <div className="eventThread">
