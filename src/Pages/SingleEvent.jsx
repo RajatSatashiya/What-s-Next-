@@ -67,7 +67,7 @@ function SingleEvent() {
         },
       });
       const data = await response.json();
-      setAdded(true);
+      setAdded(false);
     } catch (e) {
       console.log(e);
     }
